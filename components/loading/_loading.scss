@@ -1,0 +1,88 @@
+@keyframes ripple {
+  0% {
+    height: 0;
+    left: 94px;
+    opacity: 1;
+    top: 94px;
+    width: 0;
+  }
+
+  100% {
+    height: 154px;
+    left: 17px;
+    opacity: 0;
+    top: 17px;
+    width: 154px;
+  }
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    height: 0;
+    left: 94px;
+    opacity: 1;
+    top: 94px;
+    width: 0;
+  }
+
+  100% {
+    height: 154px;
+    left: 17px;
+    opacity: 0;
+    top: 17px;
+    width: 154px;
+  }
+}
+
+.loading {
+  align-items: center;
+  display: grid;
+  height: 100%;
+  justify-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.ripple {
+  height: 100%;
+  max-height: 200px !important;
+  max-width: 200px !important;
+  position: relative;
+  -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+  width: 100%;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .ripple div {
+    -webkit-animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation: none;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: content-box;
+    opacity: 1;
+    position: absolute;
+  }
+}
+
+.ripple div {
+  -webkit-animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 6px;
+  box-sizing: content-box;
+  opacity: 1;
+  position: absolute;
+}
+
+.ripple div:nth-child(1) {
+  border-color: #97c1ff;
+}
+
+.ripple div:nth-child(2) {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+  border-color: #6ea6ff;
+}
